@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { Square } from './grid/grid.component';
+import { DijakstraComponent } from './dijakstra/dijakstra.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myProject';
+ 
 }
+
+

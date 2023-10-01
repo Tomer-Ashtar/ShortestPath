@@ -1,0 +1,25 @@
+
+
+<div class="grid">
+    <div *ngFor="let squareRow of squares" class="row">
+      <div *ngFor="let square of squareRow" 
+      [style.background-color]="square.color" class="square"
+      (mousedown)="mouse_Down(square)"
+      (mouseover)="mouse_Hover(square)"
+      (mouseup)="mouse_Up(square)"
+      (click)="toWall(square)">
+      <div *ngIf="get_Board_with_weights() && weighted_square(square)" class="weights">{{ square.weight }}</div>
+      <div class="image-container" [ngStyle]="{'background-image': getBackgroundImage(square)}"></div>
+      </div>
+    </div>
+    
+  </div>
+  
+
+
+
+
+ 
+
+
+

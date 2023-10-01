@@ -1,0 +1,41 @@
+<div class="main-container">
+    <div class="left-container">
+      <div class="title">Shortest Path <span class="visualizer">Visualizer</span></div>
+      <div class="author">by Tomer Ashtar</div>
+    </div>
+    <div class="right-container">
+      <div class="buttons-container">
+        <div class="button" (click)="dijakstra_walk()">Dijakstra </div>
+        <div class="button" (click)="handle_weight()">weighted </div>
+        <div class="button">Button 4</div>
+        <div class="button" (click)="handle_Clear()">Clear Board </div>
+        <div class="button" (click)="handleTutorial()">Tutorial</div>
+        <div *ngIf="tutorial" class="tutorial-wrapper">
+          <div class="tutorial_header_wraperr">
+            <div class="tutorial_hedaer" >Tutorial</div>
+          
+          <div class="tutorial_text">{{ tutorialText[currentPageIndex] }}</div>
+          </div>
+          <div class="tutorial-content">
+            <div *ngFor="let video of videos; let i = index" [hidden]="currentPageIndex !== i">
+              <video autoplay loop [src]="video" (ended)="playNextVideo()"></video>
+              <div class="tutorial-text">
+                
+              </div>
+             
+              <div class="tutorial-buttons">
+                <div class="tutorial-buttons_Left">
+                  <button (click)="goToPrevious()">Previous</button>
+                  <button (click)="closeJumpingScreen()">Close</button>
+
+                </div>
+               
+                <button (click)="goToNext()">Next</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+       
+        
